@@ -1,5 +1,6 @@
 <p>Carro de compra</p>
-
+@if(itemsCart.length > 0) {
+   
 <table class="table table-striped table-bordered table-hover">
     <thead>
         <tr>
@@ -32,3 +33,6 @@
             <td colspan="2"  class="text-strat fw-bold">{{total}}</td>
     </tfoot>
 </table>
+}@else{
+<p class="alert alert-warning">No hay productos en el carro de compra</p>
+}

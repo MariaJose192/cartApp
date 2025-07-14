@@ -3,18 +3,15 @@ import { Product } from '../../models/product';
 
 @Component({
   selector: 'product-card',
-  imports: [],
   templateUrl: './product-card.html',
 })
 export class ProductCard {
-
   @Input() product!: Product;
+  @Output() productEvent = new EventEmitter<Product>();
 
-  @Output() productEvent: EventEmitter<Product> = new EventEmitter();
-
-  addToCart(product: Product) {
-    this.productEvent.emit(product);
-  }
-
- 
+  addToCart() {
+  console.log('📦 Emitiendo producto:', this.product);
+  this.productEvent.emit(this.product);
 }
+}
+
